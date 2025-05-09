@@ -1,4 +1,4 @@
-import { Teams, Pokemon } from '../models/IndexJoin.js';
+import { Team, Pokemon } from '../models/IndexJoin.js';
 
 const teamController = {
     async teamList(req, res) {
