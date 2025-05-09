@@ -2,12 +2,13 @@ import { Team, Pokemon } from '../models/IndexJoin.js';
 
 const teamController = {
     async teamList(req, res) {
-        const teams = await Team.findAll();
+        const team = await Team.findAll();
 
         return res.json(team);
     },
 
-    async oneTeam(req, res, next) {
+    async oneTeam(req, res) {
+        console.log('BODY:', req.body);
         const { id } = req.params;
         const team = await Team.findByPk(id);
 
@@ -19,7 +20,7 @@ const teamController = {
 
     async teamPlus(req, res, next) {
         const { name, description } = req.body;
-        const newteam = await Team.create({ name: name, description: descriptio });
+        const newTeam = await Team.create({ name: name, description: description });
 
         res.status(201).json(newTeam);
     },
@@ -50,8 +51,9 @@ const teamController = {
             return next();
         }
         await teamD.destroy();
-        res.status(204).ed();
+        res.status(204).end();
     },
+    
      async getPokemonFromTeam(req, res) {
         const { team_id } = req.params;
         try  {

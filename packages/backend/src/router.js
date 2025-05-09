@@ -15,10 +15,12 @@ router.post('/teams', teamController.teamPlus);
 router.patch('/teams/:id', teamController.teamUpdate);
 router.delete('/teams/:id', teamController.teamDelete);
 
-router.put('/teams/:id/pokemons/:id', teamController.associatePokemonToTeam);
-router.delete('/teams/:id/pokemons/:id', teamController.desassociatePokemonToTeam);
+router.get('/teams/:team_id/pokemons', teamController.getPokemonFromTeam)
+router.put('/teams/:team_id/pokemons/:pokemon_id', teamController.associatePokemonToTeam);
+router.delete('/teams/:team_id/pokemons/:pokemon_id', teamController.desassociatePokemonToTeam);
 
 router.get('/types', typeController.typesList);
 router.get('/types/:id', typeController.oneType);
+
 
 export default router;
