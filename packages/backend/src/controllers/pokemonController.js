@@ -1,0 +1,1 @@
+import { Pokemon } from '../models/IndexJoin.js'
