@@ -1,10 +1,9 @@
 import 'dotenv/config';
 import express from 'express';
+import router from './src/router.js'
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
-})
+app.use(router)
 
 const base_url = process.env.BASE_URL;
 const port = process.env.PORT;
