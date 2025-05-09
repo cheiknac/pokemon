@@ -17,11 +17,29 @@ const teamController = {
         return res.json(team);
     },
 
-    async teamUpdate(req, res, next) {
+    async teamPlus(req, res, next) {
         const { name, description } = req.body;
         const newteam = await Team.create({ name: name, description: descriptio });
 
         res.status(201).json(newTeam);
+    },
+
+        async teamUpdate(req, res, next) {
+
+        const { id } = req.params;
+        const { name, description } = req.body;
+
+        const teamToUpdate = await Team.findByPk(id);
+
+        if (!teamToUpdate) {
+            return next();
+        }
+        const updateTeam = await teamToUpdate.update({
+            name: name || teamToUpdate.name,
+            description: description || teamToUpdate.description,
+        });
+
+        res.json(updateTeam);
     },
 
     async teamDelete(req, res, next) {
