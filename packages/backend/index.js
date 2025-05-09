@@ -1,9 +1,18 @@
 import 'dotenv/config';
 import express from 'express';
-import router from './src/router.js'
+import cors from 'cors';
+
+import router from './src/router.js';
+
 const app = express();
 
-app.use(router)
+app.use(
+    cors('*')
+);
+
+app.use(express.json());
+
+app.use(router);
 
 const base_url = process.env.BASE_URL;
 const port = process.env.PORT;
