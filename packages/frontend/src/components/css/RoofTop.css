@@ -1,0 +1,24 @@
+#topBar {
+    background: #fff;
+    padding: 0.3rem 1rem;
+    display: flex;
+    justify-content: end;
+}
+
+button {
+    margin-left: 1rem;
+    padding: 0.6rem 3rem;
+    border-radius: 25rem;
+}
+
+.bSignup {
+    background: #FFCA02;
+    border: solid 0.3rem #3B5CA8;
+    color: #3B5CA8;
+    font-weight: 700;
+}
+
+.bConexion {
+    background: #3B5CA8;
+    color: #FFF;
+}
