@@ -1,0 +1,12 @@
+#elmLabel {
+    height: 10px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 4px
+}
+
+#elmValue {
+    font-size: 12px;
+    color: #4caf50;
+}

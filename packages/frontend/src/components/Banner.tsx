@@ -4,7 +4,9 @@ import './css/Banner.css';
 const Banner = () => {
     return (
         <div id="elmBanner">
-            <img src={bannerPokemon} alt="Banner"/>
+            <div>
+                <img src={bannerPokemon} alt="Banner"/>
+            </div>
         </div>
     )
 };
