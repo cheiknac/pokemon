@@ -9,10 +9,10 @@ const Navbar = () => {
             <img src={logoPokemon} alt="Logo Pokemon" />
             </div>
             <nav>
-                <Link to="#">HOME</Link>
-                <Link to="#">TYPES</Link>
-                <Link to="#">TEAMS</Link>
-                <Link to="#">ADD TEAM</Link>
+                <Link to="/">HOME</Link>
+                <Link to="/types">TYPES</Link>
+                <Link to="/teams">TEAMS</Link>
+                <Link to="/addteam">ADD TEAM</Link>
             </nav>
         </div>
     )
