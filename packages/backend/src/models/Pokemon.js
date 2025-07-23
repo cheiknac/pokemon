@@ -46,6 +46,7 @@ Pokemon.init({
         type: DataTypes.INTEGER,
         allowNull: false
     }
+
 }, {
     sequelize: client,
     tableName: 'pokemon',

@@ -7,18 +7,21 @@
 
 button {
     margin-left: 1rem;
-    padding: 0.6rem 3rem;
+    width: 10rem;
     border-radius: 25rem;
+    
 }
 
 .bSignup {
     background: #FFCA02;
-    border: solid 0.3rem #3B5CA8;
+    border: solid 0.2rem #3B5CA8;
     color: #3B5CA8;
     font-weight: 700;
+    font-size: 1rem;
 }
 
 .bConexion {
     background: #3B5CA8;
     color: #FFF;
+    font-size: 1rem;
 }
