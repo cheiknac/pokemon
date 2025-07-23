@@ -1,12 +1,13 @@
 import Rooftop from '../components/RoofTop';
 import Navbar from '../components/Navbar';
+import PokemonTeam from '../components/PokemonTeam';
 
 export default function Teams() {
     return (
         <div>
             <Rooftop />
             <Navbar />
-            <h1>Page Teams</h1>
+            <PokemonTeam />
         </div>
     )
 }
