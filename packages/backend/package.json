@@ -11,6 +11,7 @@
     "db:reset": "npm run db:create && npm run db:seed"
   },
   "dependencies": {
+    "@types/express": "^5.0.3",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",

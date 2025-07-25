@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { validateTeam } from "./middlewares/validateTeam.js";
 
 import { PokemonController } from './controllers/pokemonController.js';
 import { teamController } from './controllers/teamController.js';
@@ -11,7 +12,7 @@ router.get('/pokemons/:id', PokemonController.onePokemon);
 
 router.get('/teams', teamController.teamList);
 router.get('/teams/:id', teamController.oneTeam);
-router.post('/teams', teamController.teamPlus);
+router.post('/teams', validateTeam, teamController.teamPlus);
 router.patch('/teams/:id', teamController.teamUpdate);
 router.delete('/teams/:id', teamController.teamDelete);
 
