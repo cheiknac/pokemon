@@ -7,13 +7,15 @@ import Navbar from '../components/Navbar';
 
 type Signup = {
     nameteam: string,
+    email: string,
     password: string
+
 }
 
 
 export default function Signup() {
 
-    const [ formData, setFormData ] = useState({ nameteam: "", password: ""});
+    const [ formData, setFormData ] = useState({ username: "", email: "", password: ""});
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({...formData, [e.target.name]: e.target.value});
@@ -24,7 +26,7 @@ export default function Signup() {
         try {
             await axios.post("http://localhost:3000/teams", formData);
             alert("Nouvelle team enregistré !");
-            setFormData({ nameteam: "", password: "" });
+            setFormData({ username: "", email: "", password: "" });
         } catch (err) {
             console.error("Erreur lors de l'envoi :", err)
         }
@@ -41,10 +43,19 @@ export default function Signup() {
                         <div>
                             <input
                                 type="text"
-                                name="nameteam"
-                                value={formData.nameteam}
+                                name="username"
+                                value={formData.username}
                                 onChange={handleChange}
-                                placeholder="Nom de l'équipe"
+                                placeholder="Nom d'utilisateur"
+                                className="inputForm"
+                                required
+                            />
+                            <input
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                placeholder="Email"
                                 className="inputForm"
                                 required
                             />
@@ -53,7 +64,7 @@ export default function Signup() {
                                 name="password"
                                 value={formData.password}
                                 onChange={handleChange}
-                                placeholder="Votre mot de passe"
+                                placeholder="Mot de passe"
                                 className="inputForm"
                                 required
                             />

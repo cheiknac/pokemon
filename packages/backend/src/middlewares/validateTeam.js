@@ -9,5 +9,9 @@ export function validateTeam(req, res, next) {
     return res.status(400).json({ error: "Le mot de passe est requis (min. 6 caractères)" });
   }
 
+  if (!email || typeof email !== 'string' || !emailRegex.test(email)) {
+    return res.status(400).json({ error: "Un email valide est requis" });
+  }
+
   next();
 }

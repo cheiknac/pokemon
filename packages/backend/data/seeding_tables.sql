@@ -439,4 +439,11 @@ VALUES
 (145,3),
 (144,3);
 
+INSERT INTO "user"
+  ("id", "username", "email", "password")
+VALUES
+(1, 'vincent', 'vincent@gmail.com', '1234'),
+(2, 'riad', 'riad@gmail.com', '4321');
+
+
 COMMIT;
